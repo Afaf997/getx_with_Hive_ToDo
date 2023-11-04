@@ -42,7 +42,7 @@ class NotesModelAdapter extends TypeAdapter<NotesModel> {
 
 class TodoModelAdapter extends TypeAdapter<TodoModel> {
   @override
-  final int typeId = 1;
+  final int typeId = 2;
 
   @override
   TodoModel read(BinaryReader reader) {

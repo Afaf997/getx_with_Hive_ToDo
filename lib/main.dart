@@ -18,11 +18,12 @@ void main() async{
   Hive.registerAdapter(NotesModelAdapter());
   await Hive.openBox<NotesModel>("NotesBox");
   Hive.registerAdapter(TodoModelAdapter());
-  await Hive.openBox<TodoModel>("todobox");  
+  await Hive.openBox<TodoModel>("todosbox");  
   runApp(
     GetMaterialApp(
+      debugShowCheckedModeBanner: false,
       title: "todo app with getx",
-      initialRoute: AppPages.INITIAL,
+      initialRoute: AppPages.initial,
       getPages: AppPages.routes,
     ),
   );

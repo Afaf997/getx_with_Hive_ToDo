@@ -10,8 +10,8 @@ class NotesModel extends HiveObject{
   NotesModel({required this.title});
 }
 
-
-@HiveType(typeId:1)
+  
+@HiveType(typeId:2)
 class TodoModel extends HiveObject{
   @HiveField(0)
   String title;
