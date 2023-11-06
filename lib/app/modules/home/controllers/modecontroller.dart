@@ -6,7 +6,7 @@ class ViewModeController extends GetxController {
 
   bool get isGridView => _isGridView.value;
 
-  void toggleViewMode() {
+  void  toggleViewMode() {
     _isGridView.value = !_isGridView.value;
   }
 }

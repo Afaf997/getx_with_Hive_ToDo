@@ -18,29 +18,16 @@ class ShowTodo extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: <Widget>[
-            Row(
+            const Row(
               children: [
-                const Padding(
+                Padding(
                   padding: EdgeInsets.all(24),
                   child: Text(
-                    'NOTES BUCKET',
+                    'todo_list',
                     style: TextStyle(
                       fontSize: 23,
                       fontWeight: FontWeight.bold,
                     ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 120),
-                  child: IconButton(
-                    onPressed: () {
-                      viewModeController.toggleViewMode();
-                    },
-                    icon: Obx(() {
-                      return viewModeController.isGridView
-                          ? const Icon(Icons.grid_view_outlined)
-                          : const Icon(Icons.table_rows_rounded);
-                    }),
                   ),
                 ),
               ],
