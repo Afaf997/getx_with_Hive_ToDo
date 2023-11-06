@@ -69,42 +69,32 @@ class CustomNavigationBar extends StatelessWidget {
    final ViewModeController viewModeController = Get.put(ViewModeController());
   @override
   Widget build(BuildContext context) {
-      void toggleViewMode() {
-      viewModeController.toggleViewMode();
-    }
-    return Container(
+ return Container(
   height: 80,
   padding: const EdgeInsets.only(top: 17),
   child: Row(
     mainAxisAlignment: MainAxisAlignment.spaceBetween,
     children: [
-      IconButton(
-            onPressed: toggleViewMode,
-            icon: Obx(() {
-              return viewModeController.isGridView
-                  ? Icon(Icons.grid_view_outlined)
-                  : Icon(Icons.table_rows_rounded);
-            }),
-          ),
-      Row(
-        children: [
-          IconButton(
-            icon: Icon(CupertinoIcons.book, size: 28),
-            onPressed: () {
-              mainController.changeSelectedIndex(0);
-              pageController.jumpToPage(0);
-              
-            },
-          ),
-          IconButton(
-            icon: Icon(CupertinoIcons.list_dash, size: 28),
-            onPressed: () {
-              mainController.changeSelectedIndex(1);
-              pageController.jumpToPage(1);
-            },
-          ),
-            
-        ],
+      Expanded(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            IconButton(
+              icon: Icon(CupertinoIcons.book, size: 28),
+              onPressed: () {
+                mainController.changeSelectedIndex(0);
+                pageController.jumpToPage(0);
+              },
+            ),
+            IconButton(
+              icon: Icon(CupertinoIcons.list_dash, size: 28),
+              onPressed: () {
+                mainController.changeSelectedIndex(1);
+                pageController.jumpToPage(1);
+              },
+            ),
+          ],
+        ),
       ),
     ],
   ),

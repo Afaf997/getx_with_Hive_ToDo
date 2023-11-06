@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:todo_with_getx/app/data/moduls/todo_modul.dart';
+import 'package:todo_with_getx/app/modules/home/controllers/Notes_controller.dart';
 
 void editNotesItem(
-    todoListViewModel, BuildContext context, String currentTitle) {
-  final titleController = TextEditingController(text: currentTitle);
+  BuildContext context,
+  NotesModel notesModel, // Pass the selected notesModel
+  NotesController notesController,
+) {
+  final titleController = TextEditingController(text: notesModel.title);
 
   showDialog(
     context: context,
@@ -19,11 +24,11 @@ void editNotesItem(
           actions: [
             IconButton(
               onPressed: () {
-                todoListViewModel.updateNotesList(
-                  currentTitle, // Pass the current title
-                  titleController.text, // Pass the updated title
+                notesController.updateTodoList(
+                  notesModel,
+                  titleController.text,
                 );
-                Navigator.of(context).pop();
+                Navigator.pop(context);
               },
               icon: Icon(Icons.check, color: Colors.black),
             )
@@ -34,14 +39,12 @@ void editNotesItem(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                "Title",
-                style: TextStyle(fontSize: 23, color: Colors.grey),
+              Text("Title", style: TextStyle(fontSize: 23, color: Colors.grey),
               ),
               TextField(
                 maxLength: null,
                 controller: titleController,
-                decoration: InputDecoration(hintText: 'Note'),
+                decoration: const InputDecoration(hintText: 'Note'),
               ),
             ],
           ),
@@ -50,4 +53,3 @@ void editNotesItem(
     },
   );
 }
-
