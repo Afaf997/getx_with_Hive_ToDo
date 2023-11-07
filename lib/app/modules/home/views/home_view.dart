@@ -13,7 +13,6 @@ import 'package:todo_with_getx/app/modules/notes/views/show_Notes.dart';
 class ListDetailsWidget extends StatelessWidget {
   final titleController = TextEditingController();
   final subtitleController = TextEditingController();
-
   final todoController = Get.find<TodoController>();
   final notesController = Get.find<NotesController>();
   final mainController = Get.find<MainController>();
@@ -47,13 +46,13 @@ class ListDetailsWidget extends StatelessWidget {
         },
         items: const [
           BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.today,color: Color.fromARGB(255, 115, 114, 114),),
+            icon: Icon(CupertinoIcons.today,color: Color.fromARGB(255, 115, 114, 114),size: 35),
             label: 'Todo',
             
 
           ),
           BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.doc_checkmark_fill,color:  Color.fromARGB(255, 115, 114, 114)),
+            icon: Icon(CupertinoIcons.doc_checkmark_fill,color:  Color.fromARGB(255, 115, 114, 114),size: 35,),
             label: 'Notes',
           ),
         ],

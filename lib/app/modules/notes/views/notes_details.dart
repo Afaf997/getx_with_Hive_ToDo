@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class NoteDetailPage extends StatelessWidget {
   final String title;
 
-  NoteDetailPage(this.title);
+ NoteDetailPage(this.title);
 
   @override
   Widget build(BuildContext context) {
@@ -13,17 +13,18 @@ class NoteDetailPage extends StatelessWidget {
             onPressed: () {
               Navigator.of(context).pop();
             },
-            icon: Icon(Icons.arrow_back, color: Colors.white), // Set the color here
+            icon: const Icon(Icons.arrow_back, color: Colors.white), 
           ),
         backgroundColor:Colors.black,
-        title: Text('Note Detail', style:TextStyle(color: Colors.white)),
+        title: const Text('Note Detail', style:TextStyle(color: Colors.white)),
       ),
       body: Padding(
-        padding: EdgeInsets.all(13),
+        padding: const EdgeInsets.all(13),
         child: Text(
           title,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 20,
+            height: 2,
             
           ),
         ),

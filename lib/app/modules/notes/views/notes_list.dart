@@ -29,7 +29,6 @@ void addNotesItem(todoListViewModel, BuildContext context) {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("Title",style: TextStyle(fontSize: 23,color: Colors.grey),),
                 TextField(
                   maxLength: null,
                   controller: titleController,

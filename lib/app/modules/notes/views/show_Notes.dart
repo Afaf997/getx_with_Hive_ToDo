@@ -7,8 +7,10 @@ import 'package:todo_with_getx/app/modules/notes/views/notes_details.dart';
 import 'package:todo_with_getx/app/modules/notes/views/notes_editing.dart';
 
 class ShowNotes extends StatelessWidget {
-  final NotesController notesController = Get.put(NotesController());
-  final ViewModeController viewModeController = Get.put(ViewModeController());
+  final NotesController notesController = Get.find<NotesController>();
+  final ViewModeController viewModeController = Get.find<ViewModeController>();
+
+  ShowNotes({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +20,7 @@ class ShowNotes extends StatelessWidget {
           const Row(
             children: [
               Padding(
-                padding: EdgeInsets.only(top:70,left: 20),
+                padding: EdgeInsets.only(top: 70, left: 20),
                 child: Text(
                   'Notes-Bucket',
                   style: TextStyle(
@@ -36,7 +38,7 @@ class ShowNotes extends StatelessWidget {
                 itemBuilder: (context, index) {
                   final toDo = notesController.notesBox[index];
                   return GestureDetector(
-                    onTap: () {
+                    onDoubleTap: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -46,10 +48,10 @@ class ShowNotes extends StatelessWidget {
                     },
                     child: Card(
                       elevation: 1,
-                      margin: const EdgeInsets.only(left: 12, right: 12, top: 10),
+                      margin: const EdgeInsets.only(left: 12, right: 12, top: 17),
                       child: Slidable(
                         endActionPane: ActionPane(
-                          motion: DrawerMotion(),
+                          motion: const DrawerMotion(),
                           children: [
                             SlidableAction(
                               backgroundColor: Colors.red,
@@ -69,8 +71,7 @@ class ShowNotes extends StatelessWidget {
                               icon: Icons.edit,
                               label: "Update",
                               onPressed: (context) {
-                                // Edit note
-                                editNotesItem(context, toDo, notesController);
+                                editingpage(context, toDo);
                               },
                             ),
                           ],
@@ -78,7 +79,7 @@ class ShowNotes extends StatelessWidget {
                         child: ListTile(
                           title: Text(
                             toDo.title,
-                            maxLines: 1,
+                            maxLines: null,
                             style: const TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.w400,

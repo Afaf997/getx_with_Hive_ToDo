@@ -33,15 +33,6 @@ void addTodoItem(todoListViewModel, BuildContext context) {
                       hintText: "Description", border: OutlineInputBorder()),
                 ),
               ),
-                   Padding(
-                padding: const EdgeInsets.all(13),
-                child: TextFormField(
-                  controller: subtitlecontroller,
-                  decoration: const InputDecoration(
-                      hintText: "Time", border: OutlineInputBorder(),
-                      suffixIcon:Icon(Icons.lock_clock) ),
-                ),
-              ),
               Padding(
                 padding: const EdgeInsets.only(left: 230, top: 30),
                 child: Container(
