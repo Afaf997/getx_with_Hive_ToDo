@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:get/get.dart';
 import 'package:todo_with_getx/app/modules/home/controllers/modecontroller.dart';
-import 'package:todo_with_getx/app/modules/home/controllers/Notes_controller.dart';
-import 'package:todo_with_getx/app/modules/home/views/notesDetails.dart';
-import 'package:todo_with_getx/app/modules/home/views/notes_editing_screen.dart';
+import 'package:todo_with_getx/app/modules/notes/controllers/notescontroller.dart';
+import 'package:todo_with_getx/app/modules/notes/views/notes_details.dart';
+import 'package:todo_with_getx/app/modules/notes/views/notes_editing.dart';
 
 class ShowNotes extends StatelessWidget {
   final NotesController notesController = Get.put(NotesController());
@@ -18,7 +18,7 @@ class ShowNotes extends StatelessWidget {
           const Row(
             children: [
               Padding(
-                padding: EdgeInsets.all(14),
+                padding: EdgeInsets.only(top:70),
                 child: Text(
                   'Notes-Bucket',
                   style: TextStyle(

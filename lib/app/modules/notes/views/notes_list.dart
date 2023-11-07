@@ -8,6 +8,7 @@ void addNotesItem(todoListViewModel, BuildContext context) {
     builder: (BuildContext context) {
       return Scaffold(
         appBar: AppBar(
+          elevation: 0,
            leading: IconButton(
             onPressed: () {
               Navigator.of(context).pop();
