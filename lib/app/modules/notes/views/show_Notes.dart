@@ -18,11 +18,11 @@ class ShowNotes extends StatelessWidget {
           const Row(
             children: [
               Padding(
-                padding: EdgeInsets.only(top:70),
+                padding: EdgeInsets.only(top:70,left: 20),
                 child: Text(
                   'Notes-Bucket',
                   style: TextStyle(
-                    fontSize: 23,
+                    fontSize: 25,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -45,7 +45,8 @@ class ShowNotes extends StatelessWidget {
                       );
                     },
                     child: Card(
-                      margin: EdgeInsets.only(left: 10, right: 10, top: 8),
+                      elevation: 1,
+                      margin: const EdgeInsets.only(left: 12, right: 12, top: 10),
                       child: Slidable(
                         endActionPane: ActionPane(
                           motion: DrawerMotion(),

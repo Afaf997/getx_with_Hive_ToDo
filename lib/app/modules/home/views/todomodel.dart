@@ -52,7 +52,7 @@ void addTodoItem(todoListViewModel, BuildContext context) {
                         foregroundColor: Colors.white,
                         backgroundColor:
                             const Color.fromARGB(255, 9, 30, 48), // Text color
-                        elevation: 5),
+                        elevation: 3),
                     onPressed: () {
                       todoListViewModel.addTodoList(
                         titlecontroller.text,
