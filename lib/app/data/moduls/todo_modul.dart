@@ -7,6 +7,7 @@ part 'todo_modul.g.dart';
 class NotesModel extends HiveObject{
   @HiveField(0)
   String title;
+  
   NotesModel({required this.title,});
   
 }

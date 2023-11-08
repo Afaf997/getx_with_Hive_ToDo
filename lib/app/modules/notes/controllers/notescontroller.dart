@@ -4,10 +4,11 @@ import 'package:todo_with_getx/app/data/moduls/todo_modul.dart';
 
 class NotesController extends GetxController {
   final Box<NotesModel> _notesmodelList = Hive.box("NotesBox");
-    RxList<NotesModel> notesBox = <NotesModel>[].obs; 
+  RxList<NotesModel> notesBox = <NotesModel>[].obs; 
 
 
 
+  @override
   void onInit() {
     super.onInit();
     notesBox.assignAll(_notesmodelList.values.toList());
@@ -16,7 +17,7 @@ class NotesController extends GetxController {
   void addNotesList(String title,) {
     final newTodoList = NotesModel(title: title, );
     _notesmodelList.add(newTodoList);
-        notesBox.add(newTodoList); 
+     notesBox.add(newTodoList); 
   }
 
   void updateNotesList(NotesModel todo, String title) {

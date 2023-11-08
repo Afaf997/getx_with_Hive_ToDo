@@ -25,6 +25,11 @@ void main() async{
       title: "todo app with getx",
       initialRoute: AppPages.initial,
       getPages: AppPages.routes,
+       theme: ThemeData(
+        primaryColor: Colors.black,
+        textTheme: TextTheme(
+          // Set the default text color
+          ),)
     ),
   );
 }

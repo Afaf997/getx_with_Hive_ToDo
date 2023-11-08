@@ -9,24 +9,32 @@ class NoteDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0,
+
+        title: Text("Note Detail",style: TextStyle(fontSize: 26,fontWeight: FontWeight.bold,color: Colors.black),),
+        centerTitle: true,
          leading: IconButton(
             onPressed: () {
               Navigator.of(context).pop();
             },
-            icon: const Icon(Icons.arrow_back, color: Colors.white), 
+            icon: const Icon(Icons.arrow_back, color: Colors.black), 
           ),
-        backgroundColor:Colors.black,
-        title: const Text('Note Detail', style:TextStyle(color: Colors.white)),
+        backgroundColor:Colors.white,
       ),
       body: Padding(
         padding: const EdgeInsets.all(13),
-        child: Text(
-          title,
-          style: const TextStyle(
-            fontSize: 20,
-            height: 2,
-            
+        child: Column(
+          children: [
+          
+          Text(
+            title,
+            style: const TextStyle(
+              fontSize: 20,
+              height: 2,
+              
+            ),
           ),
+          ]
         ),
       ),
     );

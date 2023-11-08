@@ -97,7 +97,7 @@ class ShowNotes extends StatelessWidget {
                               toDo.title,
                               maxLines: null,
                               style: const TextStyle(
-                                fontSize: 20,
+                                fontSize: 18,
                                 fontWeight: FontWeight.w400,
                               ),
                             ),

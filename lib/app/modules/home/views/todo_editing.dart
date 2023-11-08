@@ -1,70 +1,38 @@
 import 'package:flutter/material.dart';
-import 'package:todo_with_getx/app/data/moduls/todo_modul.dart';
-import 'package:todo_with_getx/app/modules/home/controllers/todocontroller.dart';
+import 'package:flutter/widgets.dart';
 
+class EditPage extends StatelessWidget {
+  final TextEditingController titleController;
+  final String initialTitle;
 
+  EditPage({required this.titleController, required this.initialTitle});
 
-void editTodoItem(BuildContext context, TodoModel todo,
-    TodoController todoListViewModel) {
-  final titleController = TextEditingController(text: todo.title);
-  final descriptionController = TextEditingController(text: todo.desctription);
+  @override
+  Widget build(BuildContext context) {
+    titleController.text = initialTitle; // Set the initial title
 
-  showModalBottomSheet(
-    // backgroundColor: const Color.fromARGB(255, 212, 211, 211),
-    backgroundColor: Color.fromARGB(255, 5, 26, 43),
-    context: context,
-    builder: (BuildContext context) {
-      return Container(
-        decoration: const BoxDecoration(
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(20),
-              topRight: Radius.circular(20),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Edit Page'),
+      ),
+      body: Container(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            TextField(
+              controller: titleController,
+              decoration: const InputDecoration(hintText: 'Edit the title'),
             ),
-            // color:  Color.fromARGB(255, 5, 26, 43),
-            color: Colors.white),
-        child: Padding(
-          padding: const EdgeInsets.only(top: 40),
-          child: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(13),
-                child: TextFormField(
-                  controller: titleController,
-                  decoration: const InputDecoration(
-                      hintText: "Title", border: OutlineInputBorder()),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(13),
-                child: TextFormField(
-                  controller: descriptionController,
-                  decoration: const InputDecoration(
-                      hintText: "Description", border: OutlineInputBorder()),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 240, top: 30),
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    foregroundColor: Colors.black,
-                    backgroundColor: Colors.white,
-                    elevation: 5,
-                  ),
-                  onPressed: () {
-                    todoListViewModel.updateTodoList(
-                      todo,
-                      titleController.text,
-                      descriptionController.text,
-                    );
-                    Navigator.pop(context);
-                  },
-                  child: const Text("Update"),
-                ),
-              ),
-            ],
-          ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context, titleController.text); // Return the new title
+              },
+              child: Text('Save'),
+            ),
+          ],
         ),
-      );
-    },
-  );
+      ),
+    );
+  }
 }

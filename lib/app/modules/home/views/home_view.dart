@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:todo_with_getx/app/modules/home/controllers/maincontroller.dart';
-import 'package:todo_with_getx/app/modules/home/controllers/modecontroller.dart';
 import 'package:todo_with_getx/app/modules/home/controllers/todocontroller.dart';
 import 'package:todo_with_getx/app/modules/home/views/showTodoscreen.dart';
 import 'package:todo_with_getx/app/modules/home/views/todomodel.dart';
@@ -71,7 +70,7 @@ class ListDetailsWidget extends StatelessWidget {
       case 1:
         return ShowNotes();
       default:
-        return Container(); // Add your default content or error handling here.
+        return Container(); 
     }
   }
 }

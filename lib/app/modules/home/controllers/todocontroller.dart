@@ -21,17 +21,18 @@ class TodoController extends GetxController {
 
   void updateTodoList(TodoModel todo, String title, String description) {
     todo.title = title;
+    todo.desctription =description;
     todo.save();
-    editingTodo = null;
+  
   }
 
-  void startEditing(TodoModel todo) {
-    editingTodo = todo;
-  }
+  // void startEditing(TodoModel todo) {
+  //   editingTodo = todo;
+  // }
 
-  void cancelEditing() {
-    editingTodo = null;
-  }
+  // void cancelEditing() {
+  //   editingTodo = null;
+  // }
 
   void deleteTodo(TodoModel tododelete) {
     tododelete.delete();
