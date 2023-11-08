@@ -53,6 +53,7 @@ Widget buildSlidableListView() {
               toDo.desctription,
               style: const TextStyle(fontSize: 15),
             ),
+            
           ),
         );
       },

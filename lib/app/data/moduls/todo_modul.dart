@@ -19,6 +19,6 @@ class TodoModel extends HiveObject{
   @HiveField(1)
   String desctription;
 
-  TodoModel({required this.title,required this.desctription});
+  TodoModel({required this.title,required this.desctription,});
 }
 

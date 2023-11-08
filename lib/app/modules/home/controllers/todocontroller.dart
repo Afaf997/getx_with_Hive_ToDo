@@ -37,4 +37,9 @@ class TodoController extends GetxController {
     tododelete.delete();
     todosBox.remove(tododelete); // Remove from the observable list
   }
+
+  //  void todoChecked(TodoModel todo) {
+  //   todo.ischecked = !todo.ischecked;
+  //   todo.save();
+  // }
 }

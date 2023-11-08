@@ -25,18 +25,21 @@ class ListDetailsWidget extends StatelessWidget {
       body: Obx(
         () => _buildPage(mainController.selectedIndex.index.value),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          if (mainController.selectedIndex.index.value == 0) {
-            addTodoItem(todoController, context);
-          } else {
-            addNotesItem(notesController, context);
-          }
-        },
-        backgroundColor: const Color.fromARGB(255, 241, 186, 104),
-        child: const Icon(Icons.add),
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(7)),
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.only(right: 20),
+        child: FloatingActionButton(
+          onPressed: () {
+            if (mainController.selectedIndex.index.value == 0) {
+              addTodoItem(todoController, context);
+            } else {
+              addNotesItem(notesController, context);
+            }
+          },
+          backgroundColor: const Color.fromARGB(255, 241, 191, 117),
+          child: const Icon(Icons.add),
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(7)),
+          ),
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(

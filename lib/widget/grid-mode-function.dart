@@ -23,7 +23,7 @@ Widget buildMasonryGridItem(toDo) {
     child: ClipRRect(
       borderRadius: BorderRadius.circular(12),
       child: Container(
-        color: const Color.fromARGB(255, 232, 236, 233),
+        color:const Color.fromARGB(255, 240, 239, 239),
         child: ListTile(
           title: Text(
             toDo.title,

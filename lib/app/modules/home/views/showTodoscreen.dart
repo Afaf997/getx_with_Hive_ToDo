@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:lottie/lottie.dart';
 import 'package:todo_with_getx/app/modules/home/controllers/modecontroller.dart';
 import 'package:todo_with_getx/app/modules/home/controllers/todocontroller.dart';
 import 'package:todo_with_getx/widget/grid-mode-function.dart';
@@ -41,17 +42,17 @@ class ShowTodo extends StatelessWidget {
             ),
             Obx(() {
               return todoController.todosBox.isEmpty
-                  ? const Padding(
-                      padding: EdgeInsets.only(top: 140),
+                  ? Padding(
+                      padding: EdgeInsets.only(top: 170),
                       child: Center(
-                          // child: SizedBox(
-                          //   height: 220,
-                          //   width: 220,
-                          //   child: Lottie.asset(
-                          //     'assets/animation/empty.json',
-                          //     fit: BoxFit.cover,
-                          //   ),
-                          // ),
+                          child: SizedBox(
+                            height: 220,
+                            width: 220,
+                            child: Lottie.asset(
+                              'assets/images/animation.json',
+                              fit: BoxFit.cover,
+                            ),
+                          ),
                           ),
                     )
                   : Expanded(
