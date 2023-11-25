@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:get/get.dart';
-import 'package:todo_with_getx/app/data/moduls/todo_modul.dart';
 import 'package:todo_with_getx/app/modules/home/controllers/todocontroller.dart';
 
-import 'package:todo_with_getx/app/modules/notes/views/notes_editing.dart';
 
 Widget buildSlidableListView() {
   final TodoController todoController = Get.find<TodoController>();
   return Padding(
-    padding: EdgeInsets.only(top: 23),
+    padding: const EdgeInsets.only(top: 23),
     child: ListView.separated(
       itemCount: todoController.todosBox.length,
       separatorBuilder: (context, index) =>
@@ -28,17 +26,6 @@ Widget buildSlidableListView() {
               ),
             ],
           ),
-            // startActionPane: ActionPane(
-          //   motion: const DrawerMotion(),
-          //   children: [
-          //     SlidableAction(
-          //       backgroundColor: Colors.white,
-          //       icon: Icons.edit,
-          //       label: "edit",
-          //      onPressed: (context) => editingpage(context,),
-          //     ),
-          //   ],
-          // ),
           child: ListTile(
             contentPadding: const EdgeInsets.symmetric(
               horizontal: 20,
