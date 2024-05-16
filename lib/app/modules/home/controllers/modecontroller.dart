@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 
 class ViewModeController extends GetxController {
   // ignore: prefer_final_fields
-  RxBool _isGridView = false.obs; // Wrap the boolean with Rx for reactivity
+  RxBool _isGridView = false.obs; 
 
   bool get isGridView => _isGridView.value;
 

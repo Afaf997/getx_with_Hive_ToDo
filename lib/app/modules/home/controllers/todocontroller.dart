@@ -4,7 +4,7 @@ import 'package:todo_with_getx/app/data/moduls/todo_modul.dart';
 
 class TodoController extends GetxController {
   final Box<TodoModel> _todomodelList = Hive.box("todosBox");
-  RxList<TodoModel> todosBox = <TodoModel>[].obs; // RxList for GetX
+  RxList<TodoModel> todosBox = <TodoModel>[].obs; 
   TodoModel? editingTodo;
 
   @override
@@ -16,7 +16,7 @@ class TodoController extends GetxController {
   void addTodoList(String title, String description) {
     final newTodoList = TodoModel(title: title, desctription: description);
     _todomodelList.add(newTodoList);
-    todosBox.add(newTodoList); // Add to the observable list
+    todosBox.add(newTodoList); 
   }
 
   void updateTodoList(TodoModel todo, String title, String description) {
@@ -26,21 +26,7 @@ class TodoController extends GetxController {
   
   }
 
-  // void startEditing(TodoModel todo) {
-  //   editingTodo = todo;
-  // }
-
-  // void cancelEditing() {
-  //   editingTodo = null;
-  // }
-
   void deleteTodo(TodoModel tododelete) {
     tododelete.delete();
-    todosBox.remove(tododelete); // Remove from the observable list
   }
-
-  //  void todoChecked(TodoModel todo) {
-  //   todo.ischecked = !todo.ischecked;
-  //   todo.save();
-  // }
 }

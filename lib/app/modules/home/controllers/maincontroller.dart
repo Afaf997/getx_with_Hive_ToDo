@@ -8,8 +8,6 @@ class MainController extends GetxController {
     selectedIndex.index.value = index;
   }
 }
-
-
 class SelectedIndex {
   final RxInt index = 0.obs;
 
