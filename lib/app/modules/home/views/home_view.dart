@@ -48,18 +48,20 @@ class ListDetailsWidget extends StatelessWidget {
         },
         items: const [
           BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.today,color: Color.fromARGB(255, 115, 114, 114),size: 35),
+            icon: Icon(CupertinoIcons.today,
+                color: Color.fromARGB(255, 115, 114, 114), size: 35),
             label: 'Todo',
-            
-
           ),
           BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.doc_checkmark_fill,color:  Color.fromARGB(255, 115, 114, 114),size: 35,),
+            icon: Icon(
+              CupertinoIcons.doc_checkmark_fill,
+              color: Color.fromARGB(255, 115, 114, 114),
+              size: 35,
+            ),
             label: 'Notes',
           ),
         ],
       ),
-
     );
   }
 
@@ -70,9 +72,7 @@ class ListDetailsWidget extends StatelessWidget {
       case 1:
         return ShowNotes();
       default:
-        return Container(); 
+        return Container();
     }
   }
 }
-
-

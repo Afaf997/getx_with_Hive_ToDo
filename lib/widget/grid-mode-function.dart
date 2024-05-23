@@ -19,11 +19,11 @@ Widget buildMasonryGridView() {
 
 Widget buildMasonryGridItem(toDo) {
   return Padding(
-    padding: const EdgeInsets.only(left:6,right: 6,top: 25),
+    padding: const EdgeInsets.only(left: 6, right: 6, top: 25),
     child: ClipRRect(
       borderRadius: BorderRadius.circular(12),
       child: Container(
-        color:const Color.fromARGB(255, 240, 239, 239),
+        color: const Color.fromARGB(255, 240, 239, 239),
         child: ListTile(
           title: Text(
             toDo.title,
